@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HASH on 笔记本</title>
+    <link>https://739918602.github.io/Blog/tags/HASH/</link>
+    <description>Recent content in HASH on 笔记本</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://739918602.github.io/Blog/tags/HASH/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Argon2算法</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/hash/Argon2/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/hash/Argon2/</guid>
+      <description>本文由 简悦 SimpRead 转码， 原文地址 zhuanlan.zhihu.com
+ 这是 Argon2 的参考 C 实现，Argon2 是赢得密码哈希竞赛（PHC）的密码哈希函数。
+Argon2 是一个密码哈希函数，它总结了内存硬函数设计的最新技术，可用于哈希凭证存储、密钥派生或其他应用程序的密码。
+它有着很简单的设计，目的就是达到最高的内存填充率，使用最多的计算单元。同时，它也能抵抗 tradeoff 攻击。（by exploiting the cache and memory organization of the recent processors）
+Argon2 有三个变种：Argon2i, Argon2d, and Argon2id
+Argon2d 是比较快的，被用于数据依赖的内存访问，这使得它对 GPU 破解攻击具有很高的抵抗力，适用于不受侧信道攻击威胁的应用程序（如加密货币）
+Argon2i 使用独立于数据的内存访问，这是密码散列和基于密码的密钥派生的首选方法，但速度较慢，因为它会在内存中进行更多的传递，以防止受到折衷攻击。
+Argon2id 是 Argon2i 和 Argon2d 的混合体，使用依赖于数据和独立于数据的内存访问的组合，这使 Argon2i 能够抵抗侧通道缓存计时攻击，并使 Argon2d 能够抵抗 GPU 破解攻击。
+Argon2i, Argon2d, 和 Argon2id 之间通过参数区分：
+ A time cost, which defines the amount of computation realized and therefore the execution time, given in number of iterations A memory cost, which defines the memory usage, given in kibibytes A parallelism degree, which defines the number of parallel threads  https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

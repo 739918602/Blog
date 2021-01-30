@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://739918602.github.io/Blog/posts/crypto/ecc/" />
+
+<title>Ecc | 笔记本</title>
+<link rel="manifest" href="/Blog/manifest.json">
+<link rel="icon" href="/Blog/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/Blog/book.min.9b5bc639cc15319cd5d9df4613652b8b4625be14d3e2247313619562ffe815fa.css" integrity="sha256-m1vGOcwVMZzV2d9GE2Uri0YlvhTT4iRzE2GVYv/oFfo=">
+<script defer src="/Blog/en.search.min.d55d5942f9ac3f52b6c7220ef84a921d6787559960369dfa5dc003d1729fb38a.js" integrity="sha256-1V1ZQvmsP1K2xyIO&#43;EqSHWeHVZlgNp36XcAD0XKfs4o="></script>
+<link rel="alternate" type="application/rss+xml" href="https://739918602.github.io/Blog/posts/crypto/ecc/index.xml" title="笔记本" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/Blog"><span>笔记本</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-21c101d484f945b7ec020cbc289dbdc1" class="toggle" checked />
+    <label for="section-21c101d484f945b7ec020cbc289dbdc1" class="flex justify-between">
+      <a  class="">Crypto</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://739918602.github.io/Blog/posts/crypto/Signal/" class="">Signal算法白皮书</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-05a0f01146a99f2c4fe11496d45fa8a0" class="toggle" checked />
+    <label for="section-05a0f01146a99f2c4fe11496d45fa8a0" class="flex justify-between">
+      <a  class="active">Ecc</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://739918602.github.io/Blog/posts/crypto/ecc/Curve25519/" class="">Curve曲线算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Example/" class="">ECIES加密方案</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Wiki/" class="">ECIES加密概要</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-11774a8a7de8dad25cf30524f8483b68" class="toggle"  />
+    <label for="section-11774a8a7de8dad25cf30524f8483b68" class="flex justify-between">
+      <a  class="">Hash</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://739918602.github.io/Blog/posts/crypto/hash/Argon2/" class="">Argon2算法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/Blog/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ecc</strong>
+
+  <label for="toc-control">
+    
+    <img src="/Blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <strong>Categories</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/categories/%E5%8A%A0%E5%AF%86%E7%9B%B8%E5%85%B3/">加密相关</a>
+          <span>5</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+    
+    <li class="book-section-flat">
+      <strong>Tags</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/Curve/">Curve</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/ECC/">ECC</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/HASH/">HASH</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/KDF/">KDF</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/Signal/">Signal</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/%E7%AD%BE%E5%90%8D/">签名</a>
+          <span>1</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/Blog/posts/crypto/ecc/Curve25519/">Curve曲线算法</a>
+    </h2>
+    
+  <h5>January 28, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/Blog/categories/%E5%8A%A0%E5%AF%86%E7%9B%B8%E5%85%B3/">加密相关</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/Blog/tags/ECC/">ECC</a>
+  </div>
+  
+
+
+    <p>
+      <span class="summary">Curve25519/Ed25519/X25519 是著名密码学家 Daniel J. Bernstein 在 2006 年独立设计的椭圆曲线加密 / 签名 / 密钥交换算法，和现有的任何椭圆曲线算法都完全独立，其中 Ed25519 用于签名，可在区块链中进行签名，Stellar 就是使用了 Ed25519 作为签名算法的。
+Daniel J. Bernstein 是世界著名的密码学家，他在大学曾经开设过一门 UNIX 系统安全的课程给学生，结果一学期下来，发现了 UNIX 程序中的 91 个安全漏洞；他早年在美国依然禁止出口加密算法时，曾因为把自己设计的加密算法发布到网上遭到了美国政府的起诉，他本人抗争六年，最后美国政府撤销所有指控，目前另一个非常火的高性能安全流密码 ChaCha20 也是出自 Bernstein 之手。
+25519 系列曲线自 2006 年发表以来，除了学术界无人问津， 2013 年爱德华 · 斯诺登曝光棱镜计划后，该算法突然大火，大量软件，如 OpenSSH 都迅速增加了对 25519 系列的支持，如今 25519 已经是大势所趋，可疑的 NIST 曲线迟早要退出椭圆曲线的历史舞台，目前， RFC 增加了 SSL/TLS 对 X25519 密钥交换协议的支持，而新版 OpenSSL 1.1 也加入支持，是摆脱老大哥的第一步，下一步是将 Ed25519 做为可选的 TLS 证书签名算法，彻底摆脱 NIST 。
+Curve25519 是目前最高水平的 Diffie-Hellman 函数，适用于广泛的场景，由 Daniel J. Bernstein 教授设计。在密码学中，Curve25519 是一个椭圆曲线提供 128 位安全性，设计用于椭圆曲线 Diffie-Hellman（ECDH）密钥协商方案。它是最快的 ECC 曲线之一，并未被任何已知专利所涵盖。</span>
+      
+        <a href="/Blog/posts/crypto/ecc/Curve25519/">More</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/Blog/posts/crypto/ecc/ECIES-Example/">ECIES加密方案</a>
+    </h2>
+    
+  <h5>January 28, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/Blog/categories/%E5%8A%A0%E5%AF%86%E7%9B%B8%E5%85%B3/">加密相关</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/Blog/tags/ECC/">ECC</a>
+  </div>
+  
+
+
+    <p>
+      <span class="summary">本文由 简悦 SimpRead 转码， 原文地址 cryptobook.nakov.com
+ 在许多加密标准（例如SECG SEC-1，ISO / IEC 18033-2，IEEE 1363a和ANSI X9.63）中，类似于先前演示的代码的混合加密方案以椭圆曲线集成加密方案（ECIES）的名称进行了标准化。ECIES是一种经过公钥认证的加密方案，其工作原理与上述代码示例相似，但使用KDF（密钥派生功能）从ECDH共享机密派生单独的MAC密钥和对称加密密钥。它有许多变体。
+的ECIES标准结合了基于ECC-非对称加密与对称密码通过由相应的EC公共密钥EC专用密钥和解密，以提供数据加密。的ECIES加密方案使用ECC加密（公开密钥密码系统）+密钥推导函数（KDF）+对称加密算法+ MAC算法，组合在一起像它在如下图所示：
+ECIES加密的输入由收件人的公钥+纯文本消息组成。输出包括发件人的临时公共密钥（密文公共密钥）+加密的消息（密文+对称算法参数）+身份验证标签（MAC代码）：
+ ECIES-encrypt(recipientPublicKey, plaintextMessage) ➔ { cipherTextPublicKey, encryptedMessage, authTag }  的ECIES解密需要从加密+的输出接收者的私有密钥，并且产生原始明文消息或检测到问题（例如完整性/验证错误）：
+ ECIES-decrypt(cipherTextPublicKey, encryptedMessage, authTag, recipientPrivateKey, ) ➔ plaintextMessage  ECIES加密方案是一个框架，而不是一个具体的算法。它可以通过插入不同的算法来实现，例如用于公钥计算的secp256k1或P-521椭圆曲线+用于KDF函数的PBKDF2或Scrypt +用于对称密码和身份验证标签的AES-CTR或AES-GCM或ChaCha20-Poly1305 +用于MAC算法的HMAC-SHA512（如果使用未经身份验证的加密）。
+在下一节中，我们将通过代码示例演示如何在实践中使用ECIES。</span>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/Blog/posts/crypto/ecc/ECIES-Wiki/">ECIES加密概要</a>
+    </h2>
+    
+  <h5>January 28, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/Blog/categories/%E5%8A%A0%E5%AF%86%E7%9B%B8%E5%85%B3/">加密相关</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/Blog/tags/ECC/">ECC</a>
+  </div>
+  
+
+
+    <p>
+      <span class="summary">原文地址 en.wikipedia.org
+ 集成加密方案（IES）一种的英文混合加密方案，柯林斯为网求允许使用选定明文状语从句：选定密文攻击的对手提供语义安全性。该方案的安全性基于计算的的Diffie-Hellman问题。IES的两个版本已标准化：离散对数集成加密方案（DLIES）和椭圆曲线集成加密方案（ECIES），也称为椭圆曲线增强加密方案或简称为椭圆曲线加密方案。这两个化身在更大人群的变化之前都是相同的，因此，具体而言，我们将重点放在后者上。
+非正式描述 #  作为IES工作原理的_简要和非正式_描述和概述，我们使用基于离散对数集成加密方案（DLIES）的示例，重点是可以吸引读者的理解，而不是精确的技术细节。
+ 爱丽丝学到鲍勃的公钥，。 爱丽丝产生新的短暂价值 相关相关的公共价值， 。 然后，爱丽丝计算对称密钥 使用此信息和密钥派生函数KDF如下：。 爱丽丝计算她的密文 从她的实际信息 ，即的对称加密 ，在密钥下加密 （使用经过身份验证的加密方案），如下所示：。 爱丽丝（在一条消息中）同时发送公共临时消息 和密文 。 鲍勃，知道 和 ，现在可以计算 并解密 从 。  请注意，该方案无法确保Bob确实确定了谁真正发送了消息：该方案并没有阻止任何人假装成Alice。
+形式描述 #  所需信息 #  要使用ECIES将加密的消息发送给Bob，Alice需要以下信息：
+ 要使用的密码套件，包括密钥派生功能（例如，具有SHA-1选项的ANSI-X9.63-KDF），消息身份验证代码（例如，具有160位密钥的HMAC-SHA-1-160_或_HMAC- SHA-1-80，用80位密钥）和对称加密方案（例如，TDEA在CBC模式_或_XOR加密方案）-; 椭圆曲线域参数： 为素数场上的曲线或 为二进制二进制上的曲线； 鲍勃的公钥： （鲍勃生成它如下： ，在哪里 是他随机选择的私钥： ）； 任选的共享信息： 和 。 表示无穷大的点  加密 #  加密消息 爱丽丝执行以下操作：
+ 产生一个随机数 并计算 ; 引发一个共享的秘密： ，在哪里 （和 ）； 使用KDF更新对称加密密钥和MAC密钥：; 加密消息： ; 计算加密消息的标签，然后 ： ; 输出 。  解密 #  解密密文 鲍勃执行以下操作：</span>
+      
+        <a href="/Blog/posts/crypto/ecc/ECIES-Wiki/">More</a>
+      
+    </p>
+  </article>
+  
+
+  
+
+
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/739918602/Blog/commit/6fe1edfabe68dfeecfa9f841d2c0ad4261e09004" title='Last modified by werckerbot | January 30, 2021' target="_blank" rel="noopener">
+      <img src="/Blog/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>January 30, 2021</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <strong>Categories</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/categories/%E5%8A%A0%E5%AF%86%E7%9B%B8%E5%85%B3/">加密相关</a>
+          <span>5</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+    
+    <li class="book-section-flat">
+      <strong>Tags</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/Curve/">Curve</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/ECC/">ECC</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/HASH/">HASH</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/KDF/">KDF</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/Signal/">Signal</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/Blog/tags/%E7%AD%BE%E5%90%8D/">签名</a>
+          <span>1</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

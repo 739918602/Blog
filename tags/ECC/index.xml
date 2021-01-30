@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ECC on 笔记本</title>
+    <link>https://739918602.github.io/Blog/tags/ECC/</link>
+    <description>Recent content in ECC on 笔记本</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://739918602.github.io/Blog/tags/ECC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Curve曲线算法</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/ecc/Curve25519/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/ecc/Curve25519/</guid>
+      <description>Curve25519/Ed25519/X25519 是著名密码学家 Daniel J. Bernstein 在 2006 年独立设计的椭圆曲线加密 / 签名 / 密钥交换算法，和现有的任何椭圆曲线算法都完全独立，其中 Ed25519 用于签名，可在区块链中进行签名，Stellar 就是使用了 Ed25519 作为签名算法的。
+Daniel J. Bernstein 是世界著名的密码学家，他在大学曾经开设过一门 UNIX 系统安全的课程给学生，结果一学期下来，发现了 UNIX 程序中的 91 个安全漏洞；他早年在美国依然禁止出口加密算法时，曾因为把自己设计的加密算法发布到网上遭到了美国政府的起诉，他本人抗争六年，最后美国政府撤销所有指控，目前另一个非常火的高性能安全流密码 ChaCha20 也是出自 Bernstein 之手。
+25519 系列曲线自 2006 年发表以来，除了学术界无人问津， 2013 年爱德华 · 斯诺登曝光棱镜计划后，该算法突然大火，大量软件，如 OpenSSH 都迅速增加了对 25519 系列的支持，如今 25519 已经是大势所趋，可疑的 NIST 曲线迟早要退出椭圆曲线的历史舞台，目前， RFC 增加了 SSL/TLS 对 X25519 密钥交换协议的支持，而新版 OpenSSL 1.1 也加入支持，是摆脱老大哥的第一步，下一步是将 Ed25519 做为可选的 TLS 证书签名算法，彻底摆脱 NIST 。
+Curve25519 是目前最高水平的 Diffie-Hellman 函数，适用于广泛的场景，由 Daniel J. Bernstein 教授设计。在密码学中，Curve25519 是一个椭圆曲线提供 128 位安全性，设计用于椭圆曲线 Diffie-Hellman（ECDH）密钥协商方案。它是最快的 ECC 曲线之一，并未被任何已知专利所涵盖。</description>
+    </item>
+    
+    <item>
+      <title>ECIES加密方案</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Example/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Example/</guid>
+      <description>本文由 简悦 SimpRead 转码， 原文地址 cryptobook.nakov.com
+ 在许多加密标准（例如SECG SEC-1，ISO / IEC 18033-2，IEEE 1363a和ANSI X9.63）中，类似于先前演示的代码的混合加密方案以椭圆曲线集成加密方案（ECIES）的名称进行了标准化。ECIES是一种经过公钥认证的加密方案，其工作原理与上述代码示例相似，但使用KDF（密钥派生功能）从ECDH共享机密派生单独的MAC密钥和对称加密密钥。它有许多变体。
+的ECIES标准结合了基于ECC-非对称加密与对称密码通过由相应的EC公共密钥EC专用密钥和解密，以提供数据加密。的ECIES加密方案使用ECC加密（公开密钥密码系统）+密钥推导函数（KDF）+对称加密算法+ MAC算法，组合在一起像它在如下图所示：
+ECIES加密的输入由收件人的公钥+纯文本消息组成。输出包括发件人的临时公共密钥（密文公共密钥）+加密的消息（密文+对称算法参数）+身份验证标签（MAC代码）：
+ ECIES-encrypt(recipientPublicKey, plaintextMessage) ➔ { cipherTextPublicKey, encryptedMessage, authTag }  的ECIES解密需要从加密+的输出接收者的私有密钥，并且产生原始明文消息或检测到问题（例如完整性/验证错误）：
+ ECIES-decrypt(cipherTextPublicKey, encryptedMessage, authTag, recipientPrivateKey, ) ➔ plaintextMessage  ECIES加密方案是一个框架，而不是一个具体的算法。它可以通过插入不同的算法来实现，例如用于公钥计算的secp256k1或P-521椭圆曲线+用于KDF函数的PBKDF2或Scrypt +用于对称密码和身份验证标签的AES-CTR或AES-GCM或ChaCha20-Poly1305 +用于MAC算法的HMAC-SHA512（如果使用未经身份验证的加密）。
+在下一节中，我们将通过代码示例演示如何在实践中使用ECIES。</description>
+    </item>
+    
+    <item>
+      <title>ECIES加密概要</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Wiki/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/ecc/ECIES-Wiki/</guid>
+      <description>原文地址 en.wikipedia.org
+ 集成加密方案（IES）一种的英文混合加密方案，柯林斯为网求允许使用选定明文状语从句：选定密文攻击的对手提供语义安全性。该方案的安全性基于计算的的Diffie-Hellman问题。IES的两个版本已标准化：离散对数集成加密方案（DLIES）和椭圆曲线集成加密方案（ECIES），也称为椭圆曲线增强加密方案或简称为椭圆曲线加密方案。这两个化身在更大人群的变化之前都是相同的，因此，具体而言，我们将重点放在后者上。
+非正式描述 #  作为IES工作原理的_简要和非正式_描述和概述，我们使用基于离散对数集成加密方案（DLIES）的示例，重点是可以吸引读者的理解，而不是精确的技术细节。
+ 爱丽丝学到鲍勃的公钥，。 爱丽丝产生新的短暂价值 相关相关的公共价值， 。 然后，爱丽丝计算对称密钥 使用此信息和密钥派生函数KDF如下：。 爱丽丝计算她的密文 从她的实际信息 ，即的对称加密 ，在密钥下加密 （使用经过身份验证的加密方案），如下所示：。 爱丽丝（在一条消息中）同时发送公共临时消息 和密文 。 鲍勃，知道 和 ，现在可以计算 并解密 从 。  请注意，该方案无法确保Bob确实确定了谁真正发送了消息：该方案并没有阻止任何人假装成Alice。
+形式描述 #  所需信息 #  要使用ECIES将加密的消息发送给Bob，Alice需要以下信息：
+ 要使用的密码套件，包括密钥派生功能（例如，具有SHA-1选项的ANSI-X9.63-KDF），消息身份验证代码（例如，具有160位密钥的HMAC-SHA-1-160_或_HMAC- SHA-1-80，用80位密钥）和对称加密方案（例如，TDEA在CBC模式_或_XOR加密方案）-; 椭圆曲线域参数： 为素数场上的曲线或 为二进制二进制上的曲线； 鲍勃的公钥： （鲍勃生成它如下： ，在哪里 是他随机选择的私钥： ）； 任选的共享信息： 和 。 表示无穷大的点  加密 #  加密消息 爱丽丝执行以下操作：
+ 产生一个随机数 并计算 ; 引发一个共享的秘密： ，在哪里 （和 ）； 使用KDF更新对称加密密钥和MAC密钥：; 加密消息： ; 计算加密消息的标签，然后 ： ; 输出 。  解密 #  解密密文 鲍勃执行以下操作：</description>
+    </item>
+    
+    <item>
+      <title>Signal算法白皮书</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/Signal/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/Signal/</guid>
+      <description>本文由 简悦 SimpRead 转码， 原文地址 blog.lancitou.net
+ 本文是 Signal 协议中使用的「双棘轮算法」的中文翻译（基于 Revision 1, 2016-11-20),「参考资料」部分保持原文不翻译，英文原文在此。
+双棘轮算法用于通信双方基于共享密钥交换加密消息。通常，通信双方将先使用某种密钥协商协议（例如 X3DH1）以协商共享密钥。此后，通信双方即可使用双棘轮算法发送接收加密消息了。
+通信双方将为每一个双棘轮消息派生出新的密钥，使得旧的密钥不能从新的密钥计算得到。通信双方还将在消息中附上迪菲 - 赫尔曼公钥值。迪菲 - 赫尔曼计算的结果将被混入派生出的密钥中，使得新的密钥不能从旧的密钥计算得到。这些特性将在某一方的密钥泄漏后保护此前或此后的加密消息。
+下面描述双棘轮算法及其带头部加密的变种，同时将讨论二者的安全特性。
+2.1. KDF 链 #  KDF 链是双棘轮算法中的核心概念。
+我们将 KDF 定义为这样一个密码学函数：输入一个秘密且随机的 KDF 密钥（KDF key） 及其它一些输入数据，并返回输出数据。在密钥未知的前提下，输出的数据与随机数不可区分（也就是说，KDF 满足密码学「PRF」的要求）。若密钥不是秘密且随机的，则 KDF 应仍然能作为密钥和输入数据的安全的密码学哈希。当 HMAC 和 HKDF 使用安全的哈希算法实例化时，二者的构造即满足 KDF 定义 23。
+我们使用术语 KDF 链表示如下流程：一个 KDF 输出的一部分作为 输出密钥（Output key），而另一部分将取代 KDF 密钥，作为另一个 KDF 的输入密钥。下图展示了一个处理三个输入密钥并生成三个输出密钥的 KDF 链：
+一个 KDF 链具有如下特性（使用的术语来自 4）：
+ 弹性（resilience）：对于不知道 KDF 密钥的攻击者来说，输出密钥看起来是随机的。即使攻击者能控制 KDF 的输入，此条特性仍然成立。 前向安全性（forward security）：对于知道某一时刻的 KDF 密钥的攻击者来说，旧的输出密钥看起来是随机的。 被攻破后的可恢复性（break-in recovery）：对于知道某一时刻的 KDF 密钥的攻击者来说，新的输出密钥看起来是随机的，只要新的输入中增加了足够的熵（entropy）。  在 Alice 和 Bob 之间的双棘轮会话中，双方保存的 KDF 密钥将用于三条链：根链（root chain）、发送链（sending chain）及接收链（receiving chain）（Alice 的发送链对应 Bob 的接收链，反之亦然）。</description>
+    </item>
+    
+  </channel>
+</rss>

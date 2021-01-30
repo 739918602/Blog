@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记本</title>
+    <link>https://739918602.github.io/Blog/posts/crypto/</link>
+    <description>Recent content on 笔记本</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://739918602.github.io/Blog/posts/crypto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Signal算法白皮书</title>
+      <link>https://739918602.github.io/Blog/posts/crypto/Signal/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://739918602.github.io/Blog/posts/crypto/Signal/</guid>
+      <description>本文由 简悦 SimpRead 转码， 原文地址 blog.lancitou.net
+ 本文是 Signal 协议中使用的「双棘轮算法」的中文翻译（基于 Revision 1, 2016-11-20),「参考资料」部分保持原文不翻译，英文原文在此。
+双棘轮算法用于通信双方基于共享密钥交换加密消息。通常，通信双方将先使用某种密钥协商协议（例如 X3DH1）以协商共享密钥。此后，通信双方即可使用双棘轮算法发送接收加密消息了。
+通信双方将为每一个双棘轮消息派生出新的密钥，使得旧的密钥不能从新的密钥计算得到。通信双方还将在消息中附上迪菲 - 赫尔曼公钥值。迪菲 - 赫尔曼计算的结果将被混入派生出的密钥中，使得新的密钥不能从旧的密钥计算得到。这些特性将在某一方的密钥泄漏后保护此前或此后的加密消息。
+下面描述双棘轮算法及其带头部加密的变种，同时将讨论二者的安全特性。
+2.1. KDF 链 #  KDF 链是双棘轮算法中的核心概念。
+我们将 KDF 定义为这样一个密码学函数：输入一个秘密且随机的 KDF 密钥（KDF key） 及其它一些输入数据，并返回输出数据。在密钥未知的前提下，输出的数据与随机数不可区分（也就是说，KDF 满足密码学「PRF」的要求）。若密钥不是秘密且随机的，则 KDF 应仍然能作为密钥和输入数据的安全的密码学哈希。当 HMAC 和 HKDF 使用安全的哈希算法实例化时，二者的构造即满足 KDF 定义 23。
+我们使用术语 KDF 链表示如下流程：一个 KDF 输出的一部分作为 输出密钥（Output key），而另一部分将取代 KDF 密钥，作为另一个 KDF 的输入密钥。下图展示了一个处理三个输入密钥并生成三个输出密钥的 KDF 链：
+一个 KDF 链具有如下特性（使用的术语来自 4）：
+ 弹性（resilience）：对于不知道 KDF 密钥的攻击者来说，输出密钥看起来是随机的。即使攻击者能控制 KDF 的输入，此条特性仍然成立。 前向安全性（forward security）：对于知道某一时刻的 KDF 密钥的攻击者来说，旧的输出密钥看起来是随机的。 被攻破后的可恢复性（break-in recovery）：对于知道某一时刻的 KDF 密钥的攻击者来说，新的输出密钥看起来是随机的，只要新的输入中增加了足够的熵（entropy）。  在 Alice 和 Bob 之间的双棘轮会话中，双方保存的 KDF 密钥将用于三条链：根链（root chain）、发送链（sending chain）及接收链（receiving chain）（Alice 的发送链对应 Bob 的接收链，反之亦然）。</description>
+    </item>
+    
+  </channel>
+</rss>
