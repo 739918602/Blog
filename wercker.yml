@@ -1,0 +1,20 @@
+box: 
+  id: debian
+  username: $DOCKERHUB_USERNAME
+  password: $DOCKERHUB_ACCESS_TOKEN
+build:
+  steps:
+    - install-packages:
+        packages: git
+    - arjen/hugo-build:
+        version: "0.74.3"
+        install_pygments: git
+        config: config.yaml
+        flags: --disableKinds=["sitemap"]
+deploy:
+  steps:
+    - install-packages:
+        packages: git ssh-client
+    - lukevivier/gh-pages@0.2.1:
+        token: $GIT_TOKEN
+        basedir: public
