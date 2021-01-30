@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-baseURL: https://github.com/739918602/Blog
+baseURL: https://739918602.github.io/Blog/
 title: 笔记本
 theme: book
 
